@@ -19,7 +19,9 @@ class CreateIdeasTable extends Migration
             $table->integer('rating')->nullable()->unsigned();
             $table->enum('eliminated', ['undecided', 'eliminated', 'final'])->default('undecided');
             $table->integer('session_id')->unsigned();
+            $table->bigInteger('created_by')->unsigned();
             $table->foreign('session_id')->references('id')->on('sessions');
+            $table->foreign('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -33,6 +35,7 @@ class CreateIdeasTable extends Migration
     {
         Schema::table('ideas', function (Blueprint $table) {
             $table->dropForeign('session_id');
+            $table->dropForeign('created_by');
         });
         Schema::dropIfExists('ideas');
     }
