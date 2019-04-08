@@ -11,7 +11,9 @@ class Idea extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'body', 'rating', 'eliminated', 'session_id', 'created_by'
+    ];
 
     /**
      * The session that belong to the idea.

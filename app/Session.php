@@ -11,7 +11,9 @@ class Session extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'title', 'status'
+    ];
 
     /**
      * The users that belong to the session.
