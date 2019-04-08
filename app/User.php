@@ -36,4 +36,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The sessions that belong to the user.
+     */
+    public function sessions()
+    {
+        return $this->belongsToMany(\App\Session::class);
+    }
+
+    /**
+     * The ideas that belong to the user.
+     */
+    public function ideas()
+    {
+        return $this->hasMany(\App\Idea::class);
+    }
 }
