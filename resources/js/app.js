@@ -9,6 +9,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+Vue.use(ElementUI);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -24,6 +29,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('top-panel', require('./components/InSessionTopPanelComponent.vue').default);
 Vue.component('left-panel', require('./components/InSessionLeftPanelComponent.vue').default);
 Vue.component('right-panel', require('./components/InSessionRightPanelComponent.vue').default);
+Vue.component('top-nav', require('./components/BoardTopNavComponent.vue').default);
+Vue.component('session-card', require('./components/BoardSessionCardComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

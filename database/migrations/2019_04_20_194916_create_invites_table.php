@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSessionsTable extends Migration
+class CreateInvitesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateSessionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title')->nullable();
-            $table->enum('status', ['generating', 'elimination', 'rating', 'finished'])->default('generating');
-            $table->string('token', 40)->unique();
+        Schema::create('invites', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('email', 60);
+            $table->string('token', 16);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('invites');
     }
 }

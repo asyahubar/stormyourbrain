@@ -7,18 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Storm your brain</title>
 </head>
+
 <body>
-    <div class="top-panel">
-        <top-panel></top-panel>
-    </div>
-    <div class="left-panel">
-        <left-panel></left-panel>
-    </div>
-    <main>
-        @yield('center')
-    </main>
-    <div class="right-panel">
-        <right-panel></right-panel>
+    <div class="screen">
+        <div class="top-panel">
+            <top-panel></top-panel>
+        </div>
+        <div class="left-panel">
+            <left-panel></left-panel>
+        </div>
+        <main>
+            @yield('center')
+        </main>
+        <div class="right-panel">
+            <right-panel></right-panel>
+        </div>
     </div>
 </body>
 </html>

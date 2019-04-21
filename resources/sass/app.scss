@@ -1,6 +1,7 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Quando');
+@import url('https://fonts.googleapis.com/css?family=Moul');
 
 // Variables
 @import 'variables';
@@ -8,7 +9,94 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
+body {
+  background: $almostwhite;
+}
+
+.navbar {
+  height: 70px;
+  background-color: #222222;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  margin: 0;
+  padding: 0;
+
+  .containr {
+    margin: auto;
+    padding: 5px 30px;
+    font-family: Quando;
+    font-weight: 300;
+    height: 70px;
+    width: 940px;
+    display: inline-flex;
+
+
+    .navbar-brand {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      max-width: 65px;
+      line-height: normal;
+      height: auto;
+      display: flex;
+      white-space: inherit;
+      color: #F7F7F7;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .new-session {
+      border: 1px solid $yellow;
+      border-radius: 50%;
+      color: $yellow;
+      padding: 7px 15px;
+      font-size: 14px;
+      align-self: center;
+      margin-left: 45px;
+      cursor: pointer;
+    }
+
+    .nickname-section {
+      color: $almostwhite;
+      margin-right: 15px;
+      position: relative;
+      display: flex;
+      height: -webkit-fill-available;
+      align-items: center;
+
+      p {
+        margin: 0;
+        text-align: -webkit-right;
+        font-family: Moul, sans-serif;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .nickname-input {
+        widht: 100px;
+        position: absolute;
+      }
+    }
+
+  }
+
+}
+
+.logout-section {
+  align-self: center;
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: flex-end;
+
+  .logout-link {
+    border: none;
+    background-color: $yellow;
+    color: #222;
+    height: 40px;
+    align-self: center;
+    text-transform: uppercase;
+    font-family: Moul, sans-serif;
+    font-size: 14px;
+  }
 }
