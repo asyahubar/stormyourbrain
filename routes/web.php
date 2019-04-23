@@ -17,15 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::post('/invite', 'InviteController@invite')->name('invite');
+Route::get('/accept/{token}', 'InviteController@accept')->name('accept');
+
+Route::get('/session', 'SessionController@index')->name('newsession');
+Route::post('/session', 'SessionController@create')->name('createsession');
+Route::get('/session/{token}', 'SessionController@show')->name('singlesession');
+
 /**
  * route to the page that appears after user logs in
  * board page where are all users sessions
  */
 Route::get('/board', 'HomeController@index')->name('home');
-
-// TODO: add routes for single session
-
-Route::post('invite', 'InviteController@invite')->name('invite');
-Route::get('accept/{token}', 'InviteController@accept')->name('accept');
-
-Route::post('session', 'SessionController@create')->name('newsession');

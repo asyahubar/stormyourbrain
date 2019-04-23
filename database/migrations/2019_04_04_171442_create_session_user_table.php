@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserSessionTable extends Migration
+class CreateSessionUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUserSessionTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_session', function (Blueprint $table) {
+        Schema::create('session_user', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->enum('user_type', ['admin', 'average'])->default('average');
             $table->integer('session_id')->unsigned();
@@ -31,10 +31,10 @@ class CreateUserSessionTable extends Migration
      */
     public function down()
     {
-        Schema::table('user_session', function (Blueprint $table) {
+        Schema::table('session_user', function (Blueprint $table) {
             $table->dropForeign('session_id');
             $table->dropForeign('user_id');
         });
-        Schema::dropIfExists('user_session');
+        Schema::dropIfExists('session_user');
     }
 }

@@ -11,7 +11,7 @@
                 <div class="logout-section">
                     <span class="nickname">
                         <div class="nickname-section">
-                            <p @dblclick="changeNickname"">
+                            <p @dblclick="changeNickname">
                                 <slot name="nickname" v-model="nickname">you</slot>
                             </p>
                             <el-input @keyup.enter="saveNickname" :class="{ hide: toHide, 'nickname-input': alwaysTrue }" placeholder="Enter nickname and press enter" v-model="newNickname"></el-input>

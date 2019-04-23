@@ -15,7 +15,8 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable();
+            $table->string('title', 200)->nullable();
+            $table->string('colour', 30)->nullable();
             $table->enum('status', ['generating', 'elimination', 'rating', 'finished'])->default('generating');
             $table->string('token', 40)->unique();
             $table->timestamps();

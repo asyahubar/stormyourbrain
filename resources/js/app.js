@@ -29,6 +29,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('top-panel', require('./components/InSessionTopPanelComponent.vue').default);
 Vue.component('left-panel', require('./components/InSessionLeftPanelComponent.vue').default);
 Vue.component('right-panel', require('./components/InSessionRightPanelComponent.vue').default);
+Vue.component('stage-one', require('./components/InSessionStageOneComponent.vue').default);
+Vue.component('stage-two', require('./components/InSessionStageTwoComponent.vue').default);
+Vue.component('stage-three', require('./components/InSessionStageThreeComponent.vue').default);
 Vue.component('top-nav', require('./components/BoardTopNavComponent.vue').default);
 Vue.component('session-card', require('./components/BoardSessionCardComponent.vue').default);
 
